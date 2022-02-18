@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(initializeTodos())
+    dispatch(initializeTodos());
   }, [dispatch]);
 
   return (
@@ -24,8 +24,8 @@ function App() {
       <AppBar />
       <main>
       <Routes>
-        <Route path="/" element={<Home />}  exact/>
-        <Route path="/todos" element={<Todos/>} exact/>
+        <Route path="/" element={<Home />}  />
+        <Route path="/todos" element={<Todos/>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </main>
@@ -62,5 +62,5 @@ const GlobalStyle = createGlobalStyle`
     color: green;
     font-size: 1vw;
   }
-`
+`;
 export default App;

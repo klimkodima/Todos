@@ -12,14 +12,16 @@ const Section = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 72vh;
-`
+  height: 86vh;
+`;
+
 const H1 = styled.h1`
 font-size: 4.7vw;
 line-height: 4.7vw;
 color: #FFF;
 text-align: center;
-`
+`;
+
 const Home = () => {
 
   return (
@@ -27,6 +29,6 @@ const Home = () => {
       <H1>Main page of the application</H1>
     </Section>
   );
-}
+};
 
 export default Home;

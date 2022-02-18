@@ -1,5 +1,6 @@
 import React from 'react';
 import  styled  from "styled-components";
+
 import { createTodo } from '../../reducers/todosReducer';
 import { setNotification } from '../../reducers/notificationReducer';
 import { connect } from 'react-redux';
@@ -21,19 +22,19 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
- &hover{
+ &:hover{
    cursor:pointer;
  }
 `;
 
-const TodoForm = (props) => {
+const TodoForm = (props: { createTodo: (arg0: any) => void; setNotification: (arg0: string, arg1: number) => void; }) => {
 
-  const addTodo = async (event) => {
-    event.preventDefault()
-    const content = event.target.todo.value
-    event.target.value = ''
-    props.createTodo(content)
-    props.setNotification(` You added "${content}"`, 5)
+  const addTodo = async (event: any) => {
+    event.preventDefault();
+    const content = event.currentTarget.todo.value;
+    event.currentTarget.todo.value = '';
+    props.createTodo(content);
+    props.setNotification(` You added "${content}"`, 5);
   }
 
   return (

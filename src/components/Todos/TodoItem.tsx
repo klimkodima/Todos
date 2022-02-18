@@ -1,9 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import  styled  from "styled-components";
+
 import { completedTodo } from '../../reducers/todosReducer';
 import { setNotification } from '../../reducers/notificationReducer';
-
+import { Todo } from '../../types';
 
 const Item = styled.div`
 display: flex;
@@ -22,7 +23,7 @@ margin: 5px 6%  5px 4.16%;
 padding: 5px 10%;
 `
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo }:{todo: Todo}) => {
 
   const dispatch = useDispatch();
 

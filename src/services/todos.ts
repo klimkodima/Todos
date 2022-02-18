@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { Todo } from '../types';
+
 const baseUrl = 'http://jsonplaceholder.typicode.com/todos';
 
 const getAll = async () => {
@@ -7,12 +9,12 @@ const getAll = async () => {
   return response.data;
 };
 
-const createNew = async (data) => {
+const createNew = async (data: Todo) => {
   const response = await axios.post(baseUrl, data);
   return response.data;
 };
 
-const update = async (data) => {
+const update = async (data: Todo) => {
   const response = await axios.put(`${baseUrl}/${data.id}`, data);
   return response.data;
 };

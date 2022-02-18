@@ -1,14 +1,17 @@
+import { AnyAction } from 'redux';
+
 import todosService from '../services/todos';
+import { Todo } from '../types';
 
-const getId = () => (100000 * Math.random()).toFixed(0);
-const getUserId = () => (100000 * Math.random()).toFixed(0);
+const getId = (): number => Number((100000 * Math.random()).toFixed(0));
+const getUserId = ():number => Number((100000 * Math.random()).toFixed(0));
 
-const reducer = (state = [], action) => {
+const reducer = (state = [], action: AnyAction ) => {
   switch (action.type) {
     case 'NEW_TODO':
       return [...state, action.data]
     case 'UPDATE_TODO':
-      return state.map(todo =>
+      return state.map((todo: Todo) =>
         todo.id !== action.data.id ? todo : action.data
       );
     case 'INIT_TODOS':
@@ -19,7 +22,7 @@ const reducer = (state = [], action) => {
 }
 
 export const initializeTodos = () => {
-  return async dispatch => {
+  return async (dispatch: (arg0: { type: string; data: any; }) => void) => {
     const todos = await todosService.getAll()
     dispatch({
       type: 'INIT_TODOS',
@@ -28,9 +31,9 @@ export const initializeTodos = () => {
   }
 }
 
-export const createTodo = (title) => {
-  return async dispatch => {
-    const newTodo = {
+export const createTodo = (title: string) => {
+  return async (dispatch: (arg0: { type: string; data: any; }) => void) => {
+    const newTodo: Todo = {
       title,
       userId: getUserId(),
       id: getId(),
@@ -44,8 +47,8 @@ export const createTodo = (title) => {
   }
 }
 
-export const completedTodo = (todo) => {
-  return async dispatch => {
+export const completedTodo = (todo: Todo) => {
+  return async (dispatch: (arg0: { type: string; data: any; }) => void) => {
     const data = await todosService.update(todo)
     dispatch({
       type: 'UPDATE_TODO',

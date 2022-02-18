@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import AppBarTab from './AppBarTab';
-import logoImg from '../../assets/img/Аpplecity.svg';
+import logoImg from '../../assets/img/ToDo.svg';
 
 const Header = styled.header`
 width: 100%;
-height: 7vh;
+height: 8vh;
 background-color: #474747;
 padding: 1vh 4.16%;
 display: flex;

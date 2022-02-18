@@ -1,4 +1,6 @@
-const reducer = (state = 'all', action) => {
+import { AnyAction } from 'redux';
+
+const reducer = (state = 'ALL', action: AnyAction) => {
   switch (action.type) {
   case 'SET_FILTER':
     return action.data.filter
@@ -7,7 +9,7 @@ const reducer = (state = 'all', action) => {
   }
 }
 
-export const filterChange = filter => {
+export const filterChange = (filter: string)=> {
   return {
     type: 'SET_FILTER',
     data: {

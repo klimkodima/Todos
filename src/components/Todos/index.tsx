@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import TodoForm from './TodoForm';
 import Notification from '../Notification';
 import TodoList from "./TodoList";
@@ -10,10 +11,6 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-const H2 = styled.h2`
-  font-size: 3.23vw;
-  margin-top: 10px;
 `;
 
 const Wrapper = styled.div`
@@ -28,7 +25,6 @@ const Todos = () => {
 
   return (
     <Section>
-      <H2> Todos</H2>
       <Notification />
       <Wrapper>
         <TodoForm />

@@ -1,7 +1,7 @@
-const LEFT_PAGE = 'LEFT';
-const RIGHT_PAGE = 'RIGHT';
+const LEFT_PAGE = -1;
+const RIGHT_PAGE = 0;
 
-const range = (from, to, step = 1) => {
+const range = (from: number, to: number, step = 1) => {
     let i = from;
     const range = [];
   
@@ -10,9 +10,9 @@ const range = (from, to, step = 1) => {
       i += step;
     }
     return range;
-  }
+  };
 
-export const fetchPageNumbers = (totalPages, currentPage, pageNeighbours) => {
+export const fetchPageNumbers = (totalPages: number, currentPage: number, pageNeighbours: number) => {
    
     const totalNumbers = (pageNeighbours * 2) + 3;
     const totalBlocks = totalNumbers + 2;

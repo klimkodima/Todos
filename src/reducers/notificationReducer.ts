@@ -1,4 +1,6 @@
-const reducer = (state = null, action) => {
+import { AnyAction } from 'redux';
+
+const reducer = (state = null, action: AnyAction) => {
   switch (action.type) {
   case 'SHOW':
     return action.data
@@ -9,8 +11,8 @@ const reducer = (state = null, action) => {
   }
 }
 
-export const setNotification = (message, time) => {
-  return async dispatch => {
+export const setNotification = (message: string, time: number) => {
+  return async (dispatch: (arg0: { type: string; data?: string; }) => void) => {
     dispatch({
       type: 'SHOW',
       data: message

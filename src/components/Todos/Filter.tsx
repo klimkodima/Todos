@@ -44,27 +44,27 @@ const Button = styled.div`{
 &:hover{
   cursor:pointer;
 }
-`
+`;
 
-const Filter = (props) => {
+const Filter = (props: { filterChange: (arg0: any) => void; }) => {
 
-  const handleChange = (event) => {
-    props.filterChange(event.target.value)
+  const handleChange = (event: any) => {
+    props.filterChange( event.currentTarget.firstChild.value)
   }
 
   return (
     <Wrapper>
-     <Button checked onClick={handleChange}>
-        <Input id="all" type="radio" name="radio" value="all"/>
-        <Label for="all">All</Label>
+     <Button  onClick={(e) =>handleChange(e)}>
+        <Input id="all" type="radio" name="radio" value="ALL"/>
+        <Label htmlFor="all">All</Label>
       </Button>
-      <Button onClick={handleChange}>
-        <Input id="completed" type="radio" name="radio" value="completed" />
-        <Label for="completed">Completed</Label>
+      <Button onClick={(e) =>handleChange(e)}>
+        <Input id="completed" type="radio" name="radio" value="COMPLETED" />
+        <Label htmlFor="completed">Completed</Label>
       </Button>
-      <Button onClick={handleChange}>
-        <Input id="active" type="radio" name="radio" value="active"/>
-        <Label for="active">Active</Label>
+      <Button onClick={(e) =>handleChange(e)}>
+        <Input id="active" type="radio" name="radio" value="ACTIVE"/>
+        <Label htmlFor="active">Active</Label>
       </Button>
     </Wrapper>
   )
